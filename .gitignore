@@ -1,6 +1,9 @@
+<<<<<<< HEAD
 # IDE files
 .idea
 
+=======
+>>>>>>> d8b5113e8315f1e1114c70c71e635c1406807d7f
 # Logs
 logs
 *.log
@@ -24,12 +27,19 @@ build/Release
 
 # Dependency directory
 # Commenting this out is preferred by some people, see
+<<<<<<< HEAD
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+=======
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git-
+>>>>>>> d8b5113e8315f1e1114c70c71e635c1406807d7f
 node_modules
 
 # Users Environment Variables
 .lock-wscript
+<<<<<<< HEAD
 
 # Apigee 127 deployment
 config/.a127_env
 config/.a127_secrets
+=======
+>>>>>>> d8b5113e8315f1e1114c70c71e635c1406807d7f

@@ -1,1 +1,4 @@
-Skeleton project for Apigee-127
+ug-a127
+=======
+
+My Apigee 127 sample with Usergrid (mBaaS) API
