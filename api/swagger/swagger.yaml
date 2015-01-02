@@ -8,7 +8,6 @@ host: localhost
 basePath: /
 # 
 schemes:
-  # tip: remove http to make production-grade
   - http
   - https
 # format of bodies a client can send (Content-Type)
@@ -20,10 +19,17 @@ produces:
 x-a127-config: {}
 x-a127-services: {}
 paths:
+  /base:
+    x-swagger-router-controller: base
+    get:
+      description: Returns metadata about given app
+      responses:
+        "200":
+          description: Success getting metadata
   /hello:
     # binds a127 app logic to a route
     x-swagger-router-controller: hello_world
-    x-a127-apply: {}
+    #x-a127-apply: {}
     get:
       description: Returns 'Hello' to the caller
       # used as the method name of the controller
