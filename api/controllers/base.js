@@ -11,6 +11,7 @@
   It is a good idea to list the modules that your application depends on in the package.json in the project root
  */
 var util = require('util');
+var https = require('https');
 
 /*
  Once you 'require' a module you can reference the things that it exports.  These are defined in module.exports.
@@ -34,11 +35,30 @@ module.exports = {
   Param 1: a handle to the request object
   Param 2: a handle to the response object
  */
-function getHttp(req, res) {
+function getHttp(req, response) {
   // variables defined in the Swagger document can be referenced using req.swagger.params.{parameter_name}
   var entireRequest = req.swagger;
   //var hello = name ? util.format('Hello, %s', name) : 'Hello, stranger!';
 
+  var url = 'https://api.usergrid.com/prabhat/sandbox';
+
+    https.get(url, function(res) {
+        var body = '';
+
+        res.on('data', function(chunk) {
+            console.log("here");
+            body += chunk;
+        });
+
+        res.on('end', function() {
+           // var ugResponse = JSON.parse(body)
+            console.log ("ended");
+            response.json (JSON.parse(body));
+        });
+    }).on('error', function(e) {
+        console.log("Got error: ", e);
+    });
+
   // this sends back a JSON response which is a single string
-  res.json(entireRequest);
+  //res.json(entireRequest);
 }
